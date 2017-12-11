@@ -12,7 +12,7 @@
 ## Wireframes
 Basic wireframe for the game's UI:
 
-![Alt Image Text]([ph] "Connect Four")
+![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/ConnectFourWireFrame.png "Wireframe Layout for Connect Four UI")
 
 ## Technologies Used
 * jQuery
