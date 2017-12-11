@@ -7,11 +7,17 @@
 * This is a reimagined browser-based Connect Four game that was originally created by Hasbro® as a board game. Connect Four is a 2 player game, and the game objective is to be the first player to get his/her four of their colored discs in a row: either horizontally, vertically or diagonally to win.
 
 ## Trello - User Stories
-* This is the [trello](https://trello.com/b/lUuVlWbi/connect-4-wdi13-proj-1) breakdown of how the game was built.
+* This is the [trello](https://trello.com/b/lUuVlWbi/connect-4-wdi13-proj-1) board that breakdowns how the game was built.
 
+## Wireframes
+Basic wireframe for the game's UI:
+
+![Alt Image Text]([ph] "Connect Four")
 
 ## Technologies Used
 * jQuery
 * Materialize
 * Google Fonts
 * HTML, CSS, JavaScript
+
+## Future Version 2 Features
