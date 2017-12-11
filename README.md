@@ -21,3 +21,9 @@ Basic wireframe for the game's UI:
 * HTML, CSS, JavaScript
 
 ## Future Version 2 Features
+* Alternate the first player to move: Player 1 moves first in game 1, Player 2 moves first in game 2, etc.
+* Allow players to enter their name and display their name instead of "Player 1" and "Player 2".
+* Provide a way to play against the computer (using a simple A.I. algorithm)
+* Keep score
+* Make it responsive
+* Add avatar choices for the player
