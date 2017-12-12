@@ -1,4 +1,4 @@
-// let game_on = true;
+
 let table = $("table tr");
 
 // player set up
