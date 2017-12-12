@@ -21,6 +21,10 @@ $(document).ready(function() {
         let bottomOpen = reviewBottom(col);
         switchColor(bottomOpen, col, activeColor);
 
+        if(horizontalWinCondition()){
+            gameEnd(activeName);
+        }
+
         activePlayer = activePlayer * -1;
 
         if (activePlayer === 1) {
@@ -41,6 +45,7 @@ let showWin = (rowNum, colNum) => {
     console.log(colNum);
 }
 
+// Color Assignments
 function switchColor(rowIndex, colIndex, color) {
     return table
     .eq(rowIndex)
@@ -87,4 +92,30 @@ function reviewColorMatch(one, two, three, four) {
     one !== "rgb(255, 255, 255)" &&
     one !== undefined
     );
+}
+
+// Win Conditions Logic
+function horizontalWinCondition() {
+    for (var row = 0; row <= 7 ; row++) {
+        for (var col = 0; col < 4; col++) {
+            if (reviewColorMatch(returnColor(row,col), returnColor(row,col+1) ,returnColor(row,col+2), returnColor(row,col+3))) {
+                console.log('horiz');
+                showWin(row,col);
+                return true;
+            } else {
+                continue;
+            }
+        }
+    }
+}
+
+// Game Ending Mechanic
+function gameEnd(winningPlayer) {
+    for (var col = 0; col < 7; col++) {
+        for (var row = 0; row < 7; row++) {
+            $('h3').fadeOut('fast');
+            $('h2').fadeOut('fast');
+            $('h1').text(winningPlayer+" has won! Refresh your browser to play again!").css("fontSize", "50px")
+        }
+    }
 }
