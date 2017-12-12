@@ -1,5 +1,5 @@
 ## Connect Four: Pl-ayer Edition
-* *Deployed/Production Game:* <https://www.bitballoon.com/>
+* *Deployed/Production Game:* <http://connectfourpl.bitballoon.com/>
 
 ##  Gameplay Synopsis
 ![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/connectfourph.jpg "Connect Four")
