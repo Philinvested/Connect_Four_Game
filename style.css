@@ -6,3 +6,8 @@
     width: 90px;
     height: 90px;
 }
+
+.board {
+    background-color: yellow;
+    border: 2px solid black;
+}
