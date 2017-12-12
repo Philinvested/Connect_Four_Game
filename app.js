@@ -11,6 +11,7 @@ let activePlayer = 1;
 let activeName = player1;
 let activeColor = player1Color;
 
+// Game Mechanics
 $(document).ready(function() {
     $("h3").text(player1 + ": it is your move to choose a column to drop your black discs");
     $(".board button").on("click", function() {
