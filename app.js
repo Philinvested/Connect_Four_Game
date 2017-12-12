@@ -22,7 +22,7 @@ $(document).ready(function() {
 
         activePlayer = activePlayer * -1;
 
-        if (currentPlayer === 1) {
+        if (activePlayer === 1) {
             activeName = player1;
             $("h3").text(activeName +": it is your move to choose a column to drop your black discs.");
             activeColor = player1Color;
