@@ -223,8 +223,14 @@ function gameEnd(winningPlayer) {
       $("h3").fadeOut("fast");
       $("h2").fadeOut("fast");
       $("h1")
-        .text(winningPlayer + " has won! Refresh your browser to play again!")
+        .text(winningPlayer + " has won! Click Reset Discs to play again!")
         .css("fontSize", "50px");
+      $("resetButton").fadeIn("fast");
     }
   }
+}
+
+function resetBoard()
+{
+    location.reload()
 }
