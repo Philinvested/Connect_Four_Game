@@ -1,25 +1,30 @@
+let game_on = true;
 let table = $("table tr");
 
-// player set up
+// player set up"
+let player1Default = "Player 1";
+let player2Default = "Player 2";
 let player1 = prompt(
-  "Player One: Input your name. Your assigned disc color will be Black"
+  "Player One: Input your name. Your assigned disc color will be Black",
+  player1Default
 );
 let player1Color = "rgb(0,0,0)";
 let player2 = prompt(
-  "Player Two: Input your name. Your assigned disc color will be will be Red"
+  "Player Two: Input your name. Your assigned disc color will be will be Red",
+  player2Default
 );
 let player2Color = "rgb(255, 50, 50)";
 
 let activePlayer = 1;
-let activeName = player1;
+let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
 // Game Mechanics
-$(document).ready(function() {
+$(document).ready(function () {
   $("h3").text(
     player1 + ": it is your move to choose a column to drop your black discs"
   );
-  $(".board button").on("click", function() {
+  $(".board button").on("click", function () {
     let col = $(this)
       .closest("td")
       .index();
@@ -30,7 +35,8 @@ $(document).ready(function() {
     if (
       horizontalWinCondition() ||
       verticalWinCondition() ||
-      diagonalWinCheck()
+      diagonalWinCondition() ||
+      drawCondition()
     ) {
       gameEnd(activeName);
     }
@@ -41,14 +47,14 @@ $(document).ready(function() {
       activeName = player1;
       $("h3").text(
         activeName +
-          ": it is your move to choose a column to drop your black discs."
+        ": it is your move to choose a column to drop your black discs."
       );
       activeColor = player1Color;
     } else {
       activeName = player2;
       $("h3").text(
         activeName +
-          ": it is your move to choose a column to drop your red discs."
+        ": it is your move to choose a column to drop your red discs."
       );
       activeColor = player2Color;
     }
@@ -119,7 +125,8 @@ function horizontalWinCondition() {
           returnColor(row, col),
           returnColor(row, col + 1),
           returnColor(row, col + 2),
-          returnColor(row, col + 3)
+          returnColor(row, col + 3),
+          returnColor(row, col + 4)
         )
       ) {
         console.log("horizontal");
@@ -176,6 +183,30 @@ function diagonalWinCondition() {
         )
       ) {
         console.log("diagonal");
+        showWin(row, col);
+        return true;
+      } else {
+        continue;
+      }
+    }
+  }
+}
+
+function drawCondition() {
+  for (let col = 0; col <= 7; col++) {
+    for (let row = 0; row <= 6; row++) {
+      if (
+        reviewColorMatch(
+          returnColor(row, col),
+          returnColor(row + 1, col + 1),
+          returnColor(row + 2, col + 2),
+          returnColor(row + 3, col + 3),
+          returnColor(row + 4, col + 4),
+          returnColor(row + 5, col + 5),
+          returnColor(row + 6, col + 6),
+        )
+      ) {
+        console.log("draw");
         showWin(row, col);
         return true;
       } else {
