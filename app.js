@@ -153,6 +153,37 @@ function verticalWinCondition() {
   }
 }
 
+function diagonalWinCheck() {
+    for (var col = 0; col < 5; col++) {
+      for (var row = 0; row < 7; row++) {
+        if (
+          reviewColorMatch(
+            returnColor(row, col),
+            returnColor(row + 1, col + 1),
+            returnColor(row + 2, col + 2),
+            returnColor(row + 3, col + 3)
+          )
+        ) {
+          console.log("diagonal");
+          showWin(row, col);
+          return true;
+        } else if (
+          reviewColorMatch(
+            returnColor(row, col),
+            returnColor(row - 1, col + 1),
+            returnColor(row - 2, col + 2),
+            returnColor(row - 3, col + 3)
+          )
+        ) {
+          console.log("diagonal");
+          showWin(row, col);
+          return true;
+        } else {
+          continue;
+        }
+      }
+    }
+  }
 
 
 // Game Ending Mechanic
