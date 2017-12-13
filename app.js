@@ -226,8 +226,9 @@ function gameEnd(winningPlayer) {
       $("h3").fadeOut("fast");
       $("h2").fadeOut("fast");
       $("h1")
-        .text(winningPlayer + " has won! Click Reset Discs to play again!")
-        .css("fontSize", "50px");
+        .text(winningPlayer + " has won! Click Reset Game to play again!")
+        .css("fontSize", "40px")
+        .css("color", "red")
       $("resetButton").fadeIn("fast");
     }
   }
