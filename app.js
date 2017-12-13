@@ -154,8 +154,8 @@ function verticalWinCondition() {
 }
 
 function diagonalWinCondition() {
-  for (var col = 0; col < 5; col++) {
-    for (var row = 0; row < 7; row++) {
+  for (let col = 0; col < 5; col++) {
+    for (let row = 0; row < 7; row++) {
       if (
         reviewColorMatch(
           returnColor(row, col),
