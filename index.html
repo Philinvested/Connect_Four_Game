@@ -11,10 +11,19 @@
 </head>
 
 <body>
+    <div class="playerSides player1">
+        <h1></h1>
+    </div>
+
     <div class="container" align="center">
         <h1>Let's play Connect Four!</h1>
         <h2>Can you place four of your discs in a row before your opponent?</h2>
         <h3></h3>
+        <div class="reset">
+            <button class="resetButton" type="button" onclick="resetBoard()">
+                Reset Game
+            </button>
+        </div>
         <table class="board">
             <tr>
                 <td>
@@ -157,7 +166,12 @@
         </table>
     </div>
 
-    <button class="resetButton" type="button" onclick="resetBoard()">Reset discs</button>
+    <div class="playerSides player2">
+        <h1></h1>
+    </div>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>

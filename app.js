@@ -19,6 +19,9 @@ let activePlayer = 1;
 let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
+$(".player1").text(player1);
+$(".player2").text(player2);
+
 // Game Mechanics
 $(document).ready(function () {
   $("h3").text(

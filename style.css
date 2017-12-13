@@ -11,3 +11,28 @@
     background-color: yellow;
     border: 2px solid black;
 }
+
+
+.playerSides {
+    display:flex;
+    flex-direction: column;
+    width: 15%;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.reset {
+    margin-bottom: 3%;
+}
