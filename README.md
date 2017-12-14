@@ -25,6 +25,5 @@ Basic wireframe for the game's UI:
 
 ## Future Version 2 Features
 * Provide a way to play against the computer (using a simple A.I. algorithm)
-* Keep score
 * Create visual messages when asked for input
 * Add avatar choices for the player
