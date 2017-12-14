@@ -1,4 +1,3 @@
-let game_on = true;
 let table = $("table tr");
 
 // player set up"
@@ -43,7 +42,7 @@ $(document).ready(function() {
   $(".board button").on("click", function() {
     let col = $(event.target)
       .closest("td")
-      .index()
+      .index();
     let bottomOpen = reviewBottom(col);
     switchColor(bottomOpen, col, activeColor);
 
@@ -52,7 +51,6 @@ $(document).ready(function() {
       horizontalWinCondition() ||
       verticalWinCondition() ||
       diagonalWinCondition()
-      // || drawCondition()
     ) {
       gameEnd(activeName);
     }
@@ -196,30 +194,6 @@ function diagonalWinCondition() {
     }
   }
 }
-
-// function drawCondition() {
-//   for (let col = 0; col <= 7; col++) {
-//     for (let row = 0; row <= 6; row++) {
-//       if (
-//         reviewColorMatch(
-//           returnColor(row, col),
-//           returnColor(row + 1, col + 1),
-//           returnColor(row + 2, col + 2),
-//           returnColor(row + 3, col + 3),
-//           returnColor(row + 4, col + 4),
-//           returnColor(row + 5, col + 5),
-//           returnColor(row + 6, col + 6),
-//         )
-//       ) {
-//         console.log("draw");
-//         showWin(row, col);
-//         return true;
-//       } else {
-//         continue;
-//       }
-//     }
-//   }
-// }
 
 // Game Ending Mechanic
 function gameEnd(winningPlayer) {
