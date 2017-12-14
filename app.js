@@ -5,12 +5,12 @@ let table = $("table tr");
 let player1 = {
   name: "",
   score: 0
-}
+};
 
 let player2 = {
   name: "",
   score: 0
-}
+};
 
 let player1Default = "Player 1";
 let player2Default = "Player 2";
@@ -18,7 +18,6 @@ let player2Default = "Player 2";
 player1.name = prompt(
   "Player One: Input your name. Your assigned disc color will be Black",
   player1Default
-
 );
 let player1Color = "rgb(0,0,0)";
 
@@ -33,17 +32,18 @@ let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
 // Game Mechanics
-$(document).ready(function () {
+$(document).ready(function() {
   $(".player1").text(`${player1.name} score: ${player1.score}`);
   $(".player2").text(`${player2.name} score: ${player2.score}`);
 
   $("h3").text(
-    player1.name + ": it is your move to choose a column to drop your black discs"
+    player1.name +
+      ": it is your move to choose a column to drop your black discs"
   );
-  $(".board button").on("click", function () {
+  $(".board button").on("click", function() {
     let col = $(event.target)
       .closest("td")
-      .index();
+      .index()
     let bottomOpen = reviewBottom(col);
     switchColor(bottomOpen, col, activeColor);
 
@@ -63,14 +63,14 @@ $(document).ready(function () {
       activeName = player1.name;
       $("h3").text(
         activeName +
-        ": it is your move to choose a column to drop your black discs."
+          ": it is your move to choose a column to drop your black discs."
       );
       activeColor = player1Color;
     } else {
       activeName = player2.name;
       $("h3").text(
         activeName +
-        ": it is your move to choose a column to drop your red discs."
+          ": it is your move to choose a column to drop your red discs."
       );
       activeColor = player2Color;
     }
@@ -234,20 +234,19 @@ function gameEnd(winningPlayer) {
     }
   }
 
-  if(winningPlayer === player1.name){
+  if (winningPlayer === player1.name) {
     player1.score = player1.score + 1;
   } else {
     player2.score = player2.score + 1;
   }
+  $(".player1").text(`${player1.name} score: ${player1.score}`);
+  $(".player2").text(`${player2.name} score: ${player2.score}`);
+  $("h1").fadeOut(10000);
 }
 
-
 function resetBoard() {
-  //change all to white
   resetWhite();
-  // $("h1").fadeOut()
-  $("h3").fadeIn()
-  //reset all variables back to 0 except for player name and score - shouldn't be a problem
+  $("h3").fadeIn();
 }
 
 function resetWhite(rowIndex, colIndex) {
