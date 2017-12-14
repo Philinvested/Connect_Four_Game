@@ -14,16 +14,17 @@ Basic wireframe for the game's UI:
 
 ![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/ConnectFourWireFrame.png "Wireframe Layout for Connect Four UI")
 
+![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/connect4plGitUp "Wireframe Layout for Connect Four UI")
+
 ## Technologies Used
 * jQuery
 * Materialize
 * Google Fonts
 * HTML, CSS, JavaScript
+* Animate.CSS
 
 ## Future Version 2 Features
-* Alternate the first player to move: Player 1 moves first in game 1, Player 2 moves first in game 2, etc.
-* Allow players to enter their name and display their name instead of "Player 1" and "Player 2".
 * Provide a way to play against the computer (using a simple A.I. algorithm)
 * Keep score
-* Make it responsive
+* Create visual messages when asked for input
 * Add avatar choices for the player
