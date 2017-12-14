@@ -32,15 +32,10 @@ let activePlayer = 1;
 let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
-
-
-
 // Game Mechanics
 $(document).ready(function () {
-  $(".player1").text(player1);
-  $(".player2").text(player2);
-
-  $(".player2score").text(player2.score);
+  $(".player1").text(`${player1.name} score: ${player1.score}`);
+  $(".player2").text(`${player2.name} score: ${player2.score}`);
 
   $("h3").text(
     player1.name + ": it is your move to choose a column to drop your black discs"
@@ -234,34 +229,30 @@ function gameEnd(winningPlayer) {
       $("h2").fadeOut("fast");
       $("h1")
         .text(winningPlayer + " has won! Click Reset Game to play again!")
-        .css("fontSize", "30px")
-        .css("color", "red")
-      $("resetButton").fadeIn("fast");
+        .css("fontSize", "25px")
+        .css("color", "red");
     }
   }
-  // insert player score function method here *
-  //if winningscore === player1 increment player1 score by 1
-  // else increment player 2 score by 1
+
   if(winningPlayer === player1.name){
     player1.score = player1.score + 1;
   } else {
     player2.score = player2.score + 1;
   }
-  
-}
-
-function playerWinScore(trackPlayerScore) {
-if (winningPlayer.toString() === "Player 1") {
-player1Score = player1Score + 1;
-} else {
-player2Score = player2Score + 1;
-}
-console.log(winningPlayer.toString());
-player1Score.name = winningPlayer;
-player1Score.score = player1Score.score + 1;
 }
 
 
 function resetBoard() {
-  location.reload()
+  //change all to white
+  resetWhite();
+  // $("h1").fadeOut()
+  $("h3").fadeIn()
+  //reset all variables back to 0 except for player name and score - shouldn't be a problem
+}
+
+function resetWhite(rowIndex, colIndex) {
+  return table
+    .find("td")
+    .find("button")
+    .css("background-color", "rgb(255,255,255)");
 }
