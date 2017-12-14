@@ -1,14 +1,19 @@
-
+let game_on = true;
 let table = $("table tr");
 
 // player set up"
+let player1Score = 0;
+let player2Score = 0;
+
 let player1Default = "Player 1";
 let player2Default = "Player 2";
+
 let player1 = prompt(
   "Player One: Input your name. Your assigned disc color will be Black",
   player1Default
 );
 let player1Color = "rgb(0,0,0)";
+
 let player2 = prompt(
   "Player Two: Input your name. Your assigned disc color will be will be Red",
   player2Default
@@ -19,16 +24,21 @@ let activePlayer = 1;
 let activeName = player1 || player1Default;
 let activeColor = player1Color;
 
-$(".player1").text(player1);
-$(".player2").text(player2);
+
+
 
 // Game Mechanics
 $(document).ready(function () {
+  $(".player1").text(player1);
+  $(".player2").text(player2);
+
+  $(".player2score").text(player2Score);
+  
   $("h3").text(
     player1 + ": it is your move to choose a column to drop your black discs"
   );
   $(".board button").on("click", function () {
-    let col = $(this)
+    let col = $(event.target)
       .closest("td")
       .index();
     let bottomOpen = reviewBottom(col);
@@ -38,8 +48,8 @@ $(document).ready(function () {
     if (
       horizontalWinCondition() ||
       verticalWinCondition() ||
-      diagonalWinCondition() ||
-      drawCondition()
+      diagonalWinCondition() 
+      // || drawCondition()
     ) {
       gameEnd(activeName);
     }
@@ -109,16 +119,6 @@ function reviewColorMatch(one, two, three, four) {
   );
 }
 
-function reviewColorMatch(one, two, three, four) {
-  return (
-    one === two &&
-    one === three &&
-    one === four &&
-    one !== "rgb(255, 255, 255)" &&
-    one !== undefined
-  );
-}
-
 // Win Conditions Logic
 function horizontalWinCondition() {
   for (let row = 0; row < 6; row++) {
@@ -128,8 +128,7 @@ function horizontalWinCondition() {
           returnColor(row, col),
           returnColor(row, col + 1),
           returnColor(row, col + 2),
-          returnColor(row, col + 3),
-          returnColor(row, col + 4)
+          returnColor(row, col + 3)
         )
       ) {
         console.log("horizontal");
@@ -195,29 +194,29 @@ function diagonalWinCondition() {
   }
 }
 
-function drawCondition() {
-  for (let col = 0; col <= 7; col++) {
-    for (let row = 0; row <= 6; row++) {
-      if (
-        reviewColorMatch(
-          returnColor(row, col),
-          returnColor(row + 1, col + 1),
-          returnColor(row + 2, col + 2),
-          returnColor(row + 3, col + 3),
-          returnColor(row + 4, col + 4),
-          returnColor(row + 5, col + 5),
-          returnColor(row + 6, col + 6),
-        )
-      ) {
-        console.log("draw");
-        showWin(row, col);
-        return true;
-      } else {
-        continue;
-      }
-    }
-  }
-}
+// function drawCondition() {
+//   for (let col = 0; col <= 7; col++) {
+//     for (let row = 0; row <= 6; row++) {
+//       if (
+//         reviewColorMatch(
+//           returnColor(row, col),
+//           returnColor(row + 1, col + 1),
+//           returnColor(row + 2, col + 2),
+//           returnColor(row + 3, col + 3),
+//           returnColor(row + 4, col + 4),
+//           returnColor(row + 5, col + 5),
+//           returnColor(row + 6, col + 6),
+//         )
+//       ) {
+//         console.log("draw");
+//         showWin(row, col);
+//         return true;
+//       } else {
+//         continue;
+//       }
+//     }
+//   }
+// }
 
 // Game Ending Mechanic
 function gameEnd(winningPlayer) {
@@ -231,6 +230,12 @@ function gameEnd(winningPlayer) {
         .css("color", "red")
       $("resetButton").fadeIn("fast");
     }
+    if (winningPlayer.toString() === 'Player 1') {
+      player1Score = player1Score + 1;
+    } else {
+      player2Score = player2Score + 1;
+    }
+    console.log(winningPlayer.toString());
   }
 }
 
