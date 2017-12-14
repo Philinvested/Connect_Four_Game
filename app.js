@@ -230,7 +230,7 @@ function gameEnd(winningPlayer) {
         .css("color", "red")
       $("resetButton").fadeIn("fast");
     }
-    if (winningPlayer.toString() === 'Player 1') {
+    if (winningPlayer.toString() === "Player 1"") {
       player1Score = player1Score + 1;
     } else {
       player2Score = player2Score + 1;
