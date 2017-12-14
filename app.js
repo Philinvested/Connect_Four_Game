@@ -2,19 +2,27 @@ let game_on = true;
 let table = $("table tr");
 
 // player set up"
-let player1Score = 0;
-let player2Score = 0;
+let player1 = {
+  name: "",
+  score: 0
+}
+
+let player2 = {
+  name: "",
+  score: 0
+}
 
 let player1Default = "Player 1";
 let player2Default = "Player 2";
 
-let player1 = prompt(
+player1.name = prompt(
   "Player One: Input your name. Your assigned disc color will be Black",
   player1Default
+
 );
 let player1Color = "rgb(0,0,0)";
 
-let player2 = prompt(
+player2.name = prompt(
   "Player Two: Input your name. Your assigned disc color will be will be Red",
   player2Default
 );
@@ -32,10 +40,10 @@ $(document).ready(function () {
   $(".player1").text(player1);
   $(".player2").text(player2);
 
-  $(".player2score").text(player2Score);
-  
+  $(".player2score").text(player2.score);
+
   $("h3").text(
-    player1 + ": it is your move to choose a column to drop your black discs"
+    player1.name + ": it is your move to choose a column to drop your black discs"
   );
   $(".board button").on("click", function () {
     let col = $(event.target)
@@ -48,7 +56,7 @@ $(document).ready(function () {
     if (
       horizontalWinCondition() ||
       verticalWinCondition() ||
-      diagonalWinCondition() 
+      diagonalWinCondition()
       // || drawCondition()
     ) {
       gameEnd(activeName);
@@ -57,14 +65,14 @@ $(document).ready(function () {
     activePlayer = activePlayer * -1;
 
     if (activePlayer === 1) {
-      activeName = player1;
+      activeName = player1.name;
       $("h3").text(
         activeName +
         ": it is your move to choose a column to drop your black discs."
       );
       activeColor = player1Color;
     } else {
-      activeName = player2;
+      activeName = player2.name;
       $("h3").text(
         activeName +
         ": it is your move to choose a column to drop your red discs."
@@ -230,16 +238,30 @@ function gameEnd(winningPlayer) {
         .css("color", "red")
       $("resetButton").fadeIn("fast");
     }
-    if (winningPlayer.toString() === "Player 1") {
-      player1Score = player1Score + 1;
-    } else {
-      player2Score = player2Score + 1;
-    }
-    console.log(winningPlayer.toString());
   }
+  // insert player score function method here *
+  //if winningscore === player1 increment player1 score by 1
+  // else increment player 2 score by 1
+  if(winningPlayer === player1.name){
+    player1.score = player1.score + 1;
+  } else {
+    player2.score = player2.score + 1;
+  }
+  
 }
 
-function resetBoard()
-{
-    location.reload()
+function playerWinScore(trackPlayerScore) {
+if (winningPlayer.toString() === "Player 1") {
+player1Score = player1Score + 1;
+} else {
+player2Score = player2Score + 1;
+}
+console.log(winningPlayer.toString());
+player1Score.name = winningPlayer;
+player1Score.score = player1Score.score + 1;
+}
+
+
+function resetBoard() {
+  location.reload()
 }
