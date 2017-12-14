@@ -226,7 +226,7 @@ function gameEnd(winningPlayer) {
       $("h2").fadeOut("fast");
       $("h1")
         .text(winningPlayer + " has won! Click Reset Game to play again!")
-        .css("fontSize", "40px")
+        .css("fontSize", "30px")
         .css("color", "red")
       $("resetButton").fadeIn("fast");
     }

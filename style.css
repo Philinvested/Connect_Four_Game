@@ -18,6 +18,7 @@
 
 body {
   height: 100vh;
+  background-color: rgb(224,247,250);
 }
 
 .playerSides {
@@ -70,6 +71,6 @@ body {
 
 .container h3 {
   font-size: 18px;
-  color: green;
+  color: rgb(4, 128, 10);
   text-align: center;
 }
