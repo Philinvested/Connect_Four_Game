@@ -241,7 +241,6 @@ function gameEnd(winningPlayer) {
   }
   $(".player1").text(`${player1.name} score: ${player1.score}`);
   $(".player2").text(`${player2.name} score: ${player2.score}`);
-  $("h1").fadeOut(10000);
 }
 
 function resetBoard() {
