@@ -1,71 +1,75 @@
 .board button {
-    background-color: rgb(255, 255, 255);
-    border-radius: 60%;
-    border: 2px solid black;
-    margin: 2px;
-    width: 58.3px;
-    height: 58.3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 60%;
+  border: 2px solid black;
+  margin: 2px;
+  width: 58.3px;
+  height: 58.3px;
 }
 
 .board {
-    background-color: yellow;
-    margin: 0 auto;
-    align-content: center;
-    border-radius: 10%;
-    width: 60%;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  background-color: yellow;
+  margin: 0 auto;
+  align-content: center;
+  border-radius: 10%;
+  width: 60%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
-
 .playerSides {
-    display:flex;
-    flex-direction: column;
-    width: 20%;
-    text-align: center;
-    background-color:lightblue;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .nav-wrapper {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.page-footer {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: right;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
-.reset a{
-    margin-bottom: 3%;
-    margin-top: 0 0 0 3px;
-    text-align: right;
+.reset a {
+  margin-bottom: 3%;
+  margin-top: 0 0 0 3px;
+  text-align: right;
 }
 
 .container h1 {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .container h2 {
-    font-size: 15px;
-    margin: 0 auto;
+  font-size: 15px;
+  margin: 0 auto;
 }
 
 .container h3 {
-    font-size: 18px;
-    color: green;
-    text-align: center;
+  font-size: 18px;
+  color: green;
+  text-align: center;
 }
