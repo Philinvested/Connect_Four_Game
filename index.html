@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Connect Four</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+        <div class="nav-wrapper #26c6da cyan lighten-1">
+            <a href="#!" class="brand-logo">Connect Four</a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a class="waves-effect waves-light btn">Button</a>
-                </li>
-                <li>
-                    <a class="waves-effect waves-light btn">Button
+                    <a class="waves-effect waves-light btn reset #ffb300 amber darken-1" onclick="resetBoard()">Reset Game
                         <i class="material-icons right">cloud</i>
                     </a>
-                </li>
-                <li>
-                    <a class="waves-effect waves-light btn-large">Large Button</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="wrapper">
         <div class="playerSides player1">
-            <h1></h1>
+            <h1>Player1Name</h1>
         </div>
         <div class="container">
             <h1></h1>
-            <h2>Can you place four of your discs in a row before your opponent?</h2>
-            <h3></h3>
+            
+            <h3>Player Turn</h3>
             <table class="board">
                 <tr>
                     <td>
@@ -178,12 +174,12 @@
             </table>
         </div>
         <div class="playerSides player2">
-            <h1></h1>
+            <h1>player2name</h1>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="app.js"></script>
 </body>
 
