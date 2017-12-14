@@ -1,4 +1,4 @@
-## Connect Four: Pl-ayer Edition
+## Connect Four: WDIPL Edition
 * *Deployed/Production Game:* <http://connectfourpl.bitballoon.com/>
 
 ##  Gameplay Synopsis
@@ -14,7 +14,7 @@ Basic wireframe for the game's UI:
 
 ![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/ConnectFourWireFrame.png "Wireframe Layout for Connect Four UI")
 
-![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/connect4plGitUp "Wireframe Layout for Connect Four UI")
+![Alt Image Text](https://github.com/Philinvested/Connect_Four_Game/blob/master/imgs/connect4plGitUp.png "The Branches for project through GitUp")
 
 ## Technologies Used
 * jQuery
